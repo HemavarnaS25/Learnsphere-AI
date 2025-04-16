@@ -1,19 +1,169 @@
-.about-container {
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: auto;
+/* 🎨 Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9fb;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 🌟 Wrapper */
+.about-wrapper {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* 🦋 Hero Section */
+.about-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: slideDown 1.4s ease;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0066ff;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* 🔥 Highlight Cards */
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.highlight-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 200, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatIn 1.2s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0050c8;
+}
+
+.highlight-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 📍 Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #111827;
+  color: white;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.footer-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #60a5fa;
+}
+
+.footer-left a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.footer-left p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-right iframe {
+  width: 320px;
+  height: 200px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* 🌈 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 💻 Responsive */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  .about-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #111;
+
+  .footer-right iframe {
+    width: 100%;
+    max-width: 340px;
   }
-  
-  .about-container p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-  }
-  
+}
