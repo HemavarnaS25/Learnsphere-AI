@@ -1,23 +1,28 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import './Home.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import "./Home.css";
 
-const Home = () => {
-  return (
-    <>
-      <Navbar />
-      <div className="home-container">
-        <div className="home-content">
-          <h1>Welcome to Learnify 💡</h1>
-          <p>Your AI-powered platform for personalized, effective learning experiences tailored to your goals.</p>
-          <div className="buttons">
-            <a href="/register" className="btn-primary">Get Started</a>
-            <a href="/login" className="btn-secondary">Login</a>
-          </div>
+const Home = () => (
+  <>
+    <Navbar />
+    <div className="home-container">
+      <div className="home-content">
+        <h1>Welcome to Learnify 💡</h1>
+        <p>Your AI‑powered platform for personalized, effective learning experiences tailored to your goals.</p>
+        <div className="buttons">
+          {/* pass ?role=instructor */}
+          <Link to="/login?role=instructor" className="btn-primary">
+            Instructor
+          </Link>
+          {/* plain student login */}
+          <Link to="/login" className="btn-secondary">
+            Login
+          </Link>
         </div>
-        <img src="/Learnify.jpg" alt="Learnify Illustration" className="home-img" />
       </div>
-
+      <img src="/Learnify.jpg" alt="Learnify Illustration" className="home-img" />
+    </div>
       <section className="info-section">
   <h2>Why Choose Learnify?</h2>
   <div className="info-cards">
@@ -60,6 +65,6 @@ const Home = () => {
       </footer>
     </>
   );
-};
+
 
 export default Home;

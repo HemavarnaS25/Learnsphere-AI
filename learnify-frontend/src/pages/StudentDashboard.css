@@ -1,32 +1,82 @@
-
 .dashboard-container {
-  color:#f0f8ff;
-    padding: 4rem 2rem;
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .dashboard-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 3rem;
-  }
-  
-  .card {
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: 0.3s ease;
-    min-width: 250px;
-  }
-  
-  .card:hover {
-    background: #f0f8ff;
-  }
-  
+  color: #f0f8ff;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.dashboard-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.card {
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s ease;
+  min-width: 250px;
+}
+
+.card:hover {
+  background: #f0f8ff;
+}
+
+/* NEW STYLES BELOW */
+
+.courses-section {
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.courses-section h2 {
+  color: #f0f8ff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.course-card {
+  max-width: 280px;
+  text-align: left;
+  position: relative;
+  padding-bottom: 3rem; /* space for button */
+}
+
+.course-card h3 {
+  margin-top: 0;
+}
+
+.enroll-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #5a4ab0;
+  color: white;
+  cursor: pointer;
+}
+
+.enroll-btn:hover {
+  opacity: 0.9;
+}
+
+.error-msg {
+  color: #ff6b6b;
+}
