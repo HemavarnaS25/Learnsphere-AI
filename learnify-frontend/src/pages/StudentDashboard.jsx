@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./StudentDashboard.css";
+import EnrollModal from "../components/EnrollModal.jsx";
 
 const StudentDashboard = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const email = localStorage.getItem("userEmail");
-  const name = email ? email.split("@")[0].charAt(0).toUpperCase() + email.split("@")[0].slice(1) : "Learner";
+  const name = email
+    ? email.split("@")[0].charAt(0).toUpperCase() + email.split("@")[0].slice(1)
+    : "Learner";
 
   useEffect(() => {
     axios
@@ -34,9 +38,7 @@ const StudentDashboard = () => {
 
       <main className="dashboard-content">
         <div className="topbar">
-          <div className="profile-badge">
-            Welcome, {name} 👋
-          </div>
+          <div className="profile-badge">Welcome, {name} 👋</div>
         </div>
 
         <h1>Your Courses</h1>
@@ -52,9 +54,7 @@ const StudentDashboard = () => {
                 <p><strong>ID:</strong> {c.courseId}</p>
                 <p><strong>Lectures:</strong> {c.lectures.length}</p>
                 <p><strong>Instructor:</strong> {c.instructor.email}</p>
-                <button onClick={() => alert("Enroll flow coming soon!")}>
-                  Enroll
-                </button>
+                <button onClick={() => setSelectedCourse(c)}>Enroll</button>
               </div>
             ))
           ) : (
@@ -62,6 +62,14 @@ const StudentDashboard = () => {
           )}
         </div>
       </main>
+
+      {/* ✅ Modal rendered inside JSX */}
+      {selectedCourse && (
+        <EnrollModal
+          course={selectedCourse}
+          onClose={() => setSelectedCourse(null)}
+        />
+      )}
     </div>
   );
 };

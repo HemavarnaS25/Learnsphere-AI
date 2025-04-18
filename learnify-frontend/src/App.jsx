@@ -13,6 +13,7 @@ import CourseGenerator from './pages/CourseGenerator';
 import CourseViewer from './pages/CourseViewer';
 import Scoreboard from './pages/Scoreboard';
 import Chatbot from './pages/Chatbot';
+import PaymentPage from './pages/PaymentPage'; // 💖 New Payment Module
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
       <Route path="/view-course" element={<CourseViewer />} />
       <Route path="/scoreboard" element={<Scoreboard />} />
       <Route path="/chatbot" element={<Chatbot />} />
+      <Route path="/payment" element={<PaymentPage />} /> {/* 💙 This line handles enroll payment */}
     </Routes>
   );
 };

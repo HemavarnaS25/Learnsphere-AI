@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./InstructorDashboard.css";
 import { useNavigate } from "react-router-dom";
+import { Bar } from 'react-chartjs-2';
+import Chart from 'chart.js/auto';
+import "./InstructorDashboard.css"; // Add custom styling
 
 const InstructorDashboard = () => {
   const email = sessionStorage.getItem("user");
@@ -57,6 +59,20 @@ const InstructorDashboard = () => {
     c.courseId.toLowerCase().includes(filter.toLowerCase())
   );
 
+  // Chart.js data for student enrollments
+  const chartData = {
+    labels: courses.map(course => course.title),
+    datasets: [
+      {
+        label: 'Students Enrolled',
+        data: courses.map(course => course.studentsEnrolled.length),
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }
+    ]
+  };
+
   return (
     <div className="instructor-dashboard">
       <h1>Welcome, Instructor 👩‍🏫</h1>
@@ -74,6 +90,11 @@ const InstructorDashboard = () => {
         <div className="stats-card"><h3>👥 Students</h3><p>{totalEnrolled}</p></div>
         <div className="stats-card"><h3>💰 Income</h3><p>${totalIncome.toFixed(2)}</p></div>
         <div className="stats-card"><h3>🏆 Rank</h3><p>#{rank || "—"}</p></div>
+      </div>
+
+      <div className="chart-container">
+        <h3>Student Enrollment Statistics</h3>
+        <Bar data={chartData} />
       </div>
 
       <button className="btn-add-course" onClick={() => setShowForm(!showForm)}>

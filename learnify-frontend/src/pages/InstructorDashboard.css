@@ -1,125 +1,209 @@
-:root {
-  --primary: #5a4ab0;
-  --accent:  #ffdd57;
-  --bg:      rgba(255,255,255,0.15);
-  --shadow:  0 8px 32px rgba(31,38,135,0.2);
-  --font:    'Segoe UI', sans-serif;
+/* General Styles */
+body {
+  background: linear-gradient(to right, #2a0565, #010003);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  color: white;
 }
 
 .instructor-dashboard {
-  padding: 2rem;
-  min-height: 100vh;
-  background: linear-gradient(135deg,#eef2f3 0%,#8e9eab 100%);
-  font-family: var(--font);
-}
-
-h1 { text-align: center; margin-bottom:1rem; color:#eef2f3 }
-
-.search-bar {
-  max-width:400px; margin:0 auto 2rem; display:flex;
-}
-.search-bar input {
-  flex:1; padding:0.75rem; border:none; border-radius:50px 0 0 50px;
-  background:var(--bg); backdrop-filter:blur(8px); box-shadow:var(--shadow);
-}
-.search-bar input:focus { outline:none; }
-.search-bar button {
-  padding:0 1rem; border:none; background:var(--primary); color:#fff;
-  border-radius:0 50px 50px 0; cursor:pointer;
-}
-
-.stats-cards {
-  display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;
-  margin-bottom:3rem;
-}
-.stats-card {
-  flex:1 1 200px; max-width:240px; padding:2rem; text-align:center;
-  border-radius:20px; background:var(--bg); backdrop-filter:blur(12px);
-  box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.2);
-  position:relative; overflow:hidden; transition:transform .3s;
-}
-.stats-card:hover { transform:translateY(-5px); }
-.stats-card h3 { color:var(--primary); margin-bottom:.5rem; }
-.stats-card p  { font-size:2rem; font-weight:bold; }
-
-.courses-list h2 { text-align:center; color:var(--primary); margin-bottom:1rem; }
-.courses-grid {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:1.5rem;
-}
-.course-card {
-  background:var(--bg); backdrop-filter:blur(12px); box-shadow:var(--shadow);
-  border-radius:20px; padding:1.5rem; display:flex; flex-direction:column;
-  justify-content:space-between; transition:transform .3s,box-shadow .3s;
-}
-.course-card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 12px 48px rgba(31,38,135,0.3);
-}
-.course-card h3 { margin-bottom:.5rem; }
-.course-card p  { margin: .25rem 0; font-size:.95rem; }
-
-.card-buttons {
-  display:flex; gap:.5rem; margin-top:1rem;
-}
-.card-buttons button {
-  flex:1; padding:.5rem; border:none; border-radius:8px;
-  cursor:pointer; font-size:.9rem; transition:background .3s;
-}
-.btn-edit { background:var(--accent); }
-.btn-edit:hover { background:#e6c84a; }
-.btn-view { background:var(--primary); color:#fff; }
-.btn-view:hover { background:#4a3c96; }
-
-@media(max-width:768px){
-  .stats-cards { flex-direction:column; align-items:center; }
-}
-.instructor-dashboard {
-  padding: 2rem;
-  background: #f0f6ff;
-  font-family: 'Segoe UI', sans-serif;
-  color: #003f88;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .stats-cards {
   display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 .stats-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  flex: 1;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: rgba(7, 7, 7, 0.1);
+  color:aliceblue;
+  padding: 15px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.course-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.stats-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.stats-card h3 {
+  font-size: 1.2em;
+}
+
+.stats-card p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  transition: background 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
 }
 
 .btn-add-course {
-  background: #0056d2;
-  color: white;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  background: #4e91e6;
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.add-course-form input, .add-course-form button {
-  margin: 0.4rem 0;
-  display: block;
-  width: 100%;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.btn-add-course:hover {
+  background: #3b74b8;
 }
-body, h1, h2, h3, h4, h5, h6, p, span, a, div {
-  color: white !important;
+
+.chart-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.add-course-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: rgba(241, 236, 236, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  transition: background 0.3s ease-in-out;
+}
+
+.add-course-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.add-course-form button {
+  background: #4e91e6;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.add-course-form button:hover {
+  background: #3b74b8;
+}
+
+.courses-list {
+  margin-top: 30px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.course-card {
+  background: rgba(0, 0, 0, 0.1);
+  color:aliceblue;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.course-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.course-card h3 {
+  color:aliceblue;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-buttons button {
+  background: #4e91e6;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  font-size: 0.9em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.card-buttons button:hover {
+  background: #3b74b8;
+}
+
+@media (max-width: 768px) {
+  .stats-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+* {
+  color: white;
+  box-sizing: border-box;
+}
+body, body * {
+  color: white;
+  box-sizing: border-box;
+}
+label, span, a, button, input, textarea {
+  color: white;
 }
