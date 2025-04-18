@@ -1,7 +1,7 @@
 {
   "name": "learnify-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "serverjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,11 @@
   "description": "",
   "dependencies": {
     "axios": "^1.8.4",
-    "cheerio": "^1.0.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "mongoose": "^7.8.6"
   }
 }

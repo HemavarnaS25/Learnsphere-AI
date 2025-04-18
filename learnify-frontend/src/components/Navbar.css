@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background: linear-gradient(to right, #2a0565, #11042c);
     padding: 1rem 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -13,7 +13,7 @@
   .navbar-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2a2a2a;
+    color: #f1efef;
   }
   
   .navbar-links {
@@ -24,7 +24,7 @@
   
   .navbar-links li a {
     font-size: 1rem;
-    color: #333;
+    color: #ffffff;
     transition: color 0.3s;
   }
   

@@ -1,27 +1,132 @@
-.login-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 3rem;
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-  }
-  .login-container h2 {
-    margin-bottom: 1.5rem;
-  }
-  .login-container input,
-  .login-container button {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  }
-  .login-container button {
-    background-color: #2196f3;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #2a0565, #010003);
+  color: #fff;
+}
+
+/* Layout container */
+.login-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left visual panel */
+.left-panel {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.left-panel .illustration {
+  width: 300px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.left-panel h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.left-panel p {
+  font-size: 16px;
+  color: #e0e0e0;
+  max-width: 400px;
+}
+
+/* Right form panel */
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Login card */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.login-card .subtitle {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* Form styles */
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 14px;
+}
+
+.login-form input::placeholder {
+  color: #dcdcdc;
+}
+
+.login-form input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7c82f0;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #5a63cf;
+}
+
+/* Error text */
+.error-msg {
+  color: #ffbaba;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Footer */
+.bottom-text {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #dddddd;
+}
+
+.bottom-text a {
+  color: #6f7fcf;
+  text-decoration: none;
+}

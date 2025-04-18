@@ -20,7 +20,7 @@ body {
   .generator-container h1 {
     font-size: 3rem;
     text-align: center;
-    color: #1b5e20;
+    color: #1e1b5e;
     margin-bottom: 40px;
     letter-spacing: 1px;
   }
@@ -75,7 +75,7 @@ body {
   }
   
   .search-section button:hover {
-    background: linear-gradient(to right, #4ac7fa, #7f5eff, #20e2d7);
+    background: linear-gradient(to right, #4ac7fa, #7f5eff, #2057e2);
     transform: scale(1.05);
     box-shadow: 0 8px 24px rgba(31, 112, 255, 0.5);
   }
@@ -92,7 +92,7 @@ body {
   
   .course-output h2 {
     font-size: 2.5rem;
-    color: #00695c;
+    color: #040069;
     margin-bottom: 20px;
     border-bottom: 2px solid #b2dfdb;
     padding-bottom: 10px;
@@ -107,13 +107,13 @@ body {
   .course-output h3 {
     font-size: 1.8rem;
     margin-bottom: 25px;
-    color: #2e7d32;
+    color: #2e3a7d;
   }
   
   .course-output h4 {
     font-size: 1.5rem;
     margin: 30px 0 15px;
-    color: #388e3c;
+    color: #38428e;
   }
   
   .course-output ul {
@@ -126,7 +126,7 @@ body {
     background: #f1f8e9;
     padding: 18px 24px;
     margin-bottom: 20px;
-    border-left: 5px solid #66bb6a;
+    border-left: 5px solid #667abb;
     border-radius: 12px;
     font-size: 1.1rem;
     box-shadow: 0 2px 10px rgba(76, 175, 80, 0.1);
@@ -138,7 +138,7 @@ body {
   }
   
   .course-output li strong {
-    color: #1b5e20;
+    color: #1b1c5e;
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
