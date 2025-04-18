@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CourseGenerator.css';
 import Navbar from '../components/Navbar';
+import './CourseViewer.css'
 
 const CourseGenerator = () => {
   const [keyword, setKeyword] = useState('');

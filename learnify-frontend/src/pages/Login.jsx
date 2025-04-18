@@ -24,6 +24,7 @@ const Login = () => {
         "http://localhost:5000/api/auth/login",
         input
       );
+      
       // store auth
       sessionStorage.setItem("isAuth", "true");
       sessionStorage.setItem("user", res.data.email);

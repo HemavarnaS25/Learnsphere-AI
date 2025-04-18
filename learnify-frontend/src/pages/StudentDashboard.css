@@ -1,82 +1,108 @@
-.dashboard-container {
-  color: #f0f8ff;
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #2a0565, #010003);
+  color: white;
 }
 
-.dashboard-links {
+.student-dashboard-container {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 3rem;
+  min-height: 100vh;
 }
 
-.card {
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: 0.3s ease;
-  min-width: 250px;
+.sidebar {
+  width: 240px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
 }
 
-.card:hover {
-  background: #f0f8ff;
-}
-
-/* NEW STYLES BELOW */
-
-.courses-section {
-  margin-top: 4rem;
-  text-align: left;
-}
-
-.courses-section h2 {
-  color: #f0f8ff;
+.sidebar h2 {
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  text-align: center;
+  font-weight: 700;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.profile-badge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.dashboard-content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
 .courses-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .course-card {
-  max-width: 280px;
-  text-align: left;
-  position: relative;
-  padding-bottom: 3rem; /* space for button */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
-.course-card h3 {
-  margin-top: 0;
+.course-card:hover {
+  transform: translateY(-5px);
 }
 
-.enroll-btn {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.5rem 1rem;
+.course-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-card button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  color: #2a0565;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  background: #5a4ab0;
-  color: white;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.enroll-btn:hover {
-  opacity: 0.9;
-}
-
-.error-msg {
-  color: #ff6b6b;
+.course-card button:hover {
+  background: #eee;
 }

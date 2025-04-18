@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
 import axios from "axios";
 import "./StudentDashboard.css";
 
@@ -7,6 +6,9 @@ const StudentDashboard = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const email = localStorage.getItem("userEmail");
+  const name = email ? email.split("@")[0].charAt(0).toUpperCase() + email.split("@")[0].slice(1) : "Learner";
 
   useEffect(() => {
     axios
@@ -23,52 +25,44 @@ const StudentDashboard = () => {
   }, []);
 
   return (
-    <>
-      <Navbar />
-      <div className="dashboard-container">
-        <h1>Student Dashboard 🎓</h1>
+    <div className="student-dashboard-container">
+      <aside className="sidebar">
+        <h2>Learnify</h2>
+        <a href="/generate-course">✨ AI Course</a>
+        <a href="/scoreboard">🏆 Scoreboard</a>
+      </aside>
 
-        <div className="dashboard-links">
-          <a href="/generate-course" className="card">
-            Generate Course with AI
-          </a>
-          {/* <a href="/view-course" className="card">
-            View Courses
-          </a> */}
-          <a href="/scoreboard" className="card">
-            View Scoreboard
-          </a>
+      <main className="dashboard-content">
+        <div className="topbar">
+          <div className="profile-badge">
+            Welcome, {name} 👋
+          </div>
         </div>
 
-        {/* Dynamic Courses Section */}
-        <section className="courses-section">
-          <h2>Available Courses</h2>
+        <h1>Your Courses</h1>
 
-          {loading && <p>Loading courses…</p>}
-          {error && <p className="error-msg">{error}</p>}
+        {loading && <p>Loading courses...</p>}
+        {error && <p className="error-msg">{error}</p>}
 
-          {!loading && !error && (
-            <div className="courses-grid">
-              {courses.map((c) => (
-                <div key={c._id} className="card course-card">
-                  <h3>{c.title}</h3>
-                  <p><strong>ID:</strong> {c.courseId}</p>
-                  <p><strong>Lectures:</strong> {c.lectures.length}</p>
-                  <p><strong>Instructor:</strong> {c.instructor.email}</p>
-                  <button
-                    onClick={() => alert("Enroll flow coming soon!")}
-                    className="enroll-btn"
-                  >
-                    Enroll
-                  </button>
-                </div>
-              ))}
-              {courses.length === 0 && <p>No courses available.</p>}
-            </div>
+        <div className="courses-grid">
+          {!loading && !error && courses.length > 0 ? (
+            courses.map((c) => (
+              <div key={c._id} className="course-card">
+                <h2>{c.title}</h2>
+                <p><strong>ID:</strong> {c.courseId}</p>
+                <p><strong>Lectures:</strong> {c.lectures.length}</p>
+                <p><strong>Instructor:</strong> {c.instructor.email}</p>
+                <button onClick={() => alert("Enroll flow coming soon!")}>
+                  Enroll
+                </button>
+              </div>
+            ))
+          ) : (
+            !loading && <p>No courses available.</p>
           )}
-        </section>
-      </div>
-    </>
+        </div>
+      </main>
+    </div>
   );
 };
 

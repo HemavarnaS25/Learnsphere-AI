@@ -7,15 +7,14 @@
 }
 
 body {
-  background-color: #f9f9fb;
-  color: #111;
+  background: linear-gradient(to right, #2a0565, #010003);
+  color: #ddd;
   overflow-x: hidden;
 }
 
 /* 🏠 Home Section */
 .home-container {
-  margin-top: 80px; /* Add this line */
-  /* existing styles... */
+  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,54 +24,53 @@ body {
   margin-right: auto;
   gap: 2rem;
   animation: fadeIn 1.2s ease forwards;
-  background: #ffffff;
+  background: rgba(32, 30, 30, 0.75); /* Enhanced background for visual appeal */
   border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
 
 .buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .btn-primary,
 .btn-secondary {
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  padding: 0.85rem 1.75rem; /* Increased padding for better appearance */
+  border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.15);
 }
 
 .btn-primary {
-  background: linear-gradient(to right, #000000, #191a1a);
-  color: white;
+  background: #60a5fa;
+  color: #fff;
   border: none;
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
+  transform: scale(1.07); /* Enhanced hover effect */
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.35);
 }
 
 .btn-secondary {
-  background: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
+  background: #374151;
+  color: #fff;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background: #e0e0e0;
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.35);
 }
 
 .home-img {
-  width: 480px;
+  width: 500px; /* Adjusted for proportional display */
   border-radius: 20px;
   animation: zoomIn 1.8s ease;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* 💡 Info Section */
@@ -84,35 +82,37 @@ body {
 }
 
 .info-section h2 {
-  font-size: 2.4rem;
+  font-size: 2.6rem; /* Slightly larger for visual hierarchy */
   margin-bottom: 2rem;
-  color: #fffafa;
+  background: linear-gradient(to right, #4e90fa, #2a0565);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text effect */
 }
 
 .info-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem; /* More breathing space */
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid #e5e5e5;
+  background: rgba(32, 30, 30, 0.75);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(190, 190, 190, 0.5);
 }
 
 .info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px); /* Dynamic hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .info-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #000000;
+  font-size: 1.4rem; /* Refined size */
+  margin-bottom: 1.5rem;
+  color: #111;
 }
 
 .info-card p {
@@ -127,20 +127,20 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   padding: 3rem 2rem;
-  background: #111827;
-  color: rgb(61, 104, 190);
+  background: #161b22; /* Enhanced footer background */
+  color: #ddd;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
 .footer-left h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Slightly larger for hierarchy */
   margin-bottom: 1rem;
-  color: #60a5fa;
+  color: #93c5fd;
 }
 
 .footer-left a {
-  color: #93c5fd;
+  color: #60a5fa;
   text-decoration: none;
 }
 
