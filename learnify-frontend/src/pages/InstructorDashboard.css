@@ -13,7 +13,7 @@ h1, h2, h3 {
   padding: 10px 0;
   text-align: center;
   font-weight: bold;
-  color: white;
+  color: rgb(255, 253, 253);
 }
 
 .instructor-dashboard {

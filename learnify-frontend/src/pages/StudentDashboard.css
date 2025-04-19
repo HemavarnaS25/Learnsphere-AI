@@ -4,6 +4,9 @@ body {
   background: linear-gradient(to right, #2a0565, #010003);
   color: white;
 }
+h1{
+  color:#fff;
+}
 
 .student-dashboard-container {
   display: flex;

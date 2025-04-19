@@ -4,10 +4,14 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
   }
+  h1{
+    color:white;
+  }
+  
   
   body {
     background-color: #ffffff;
-    color: #333;
+    color: #f6f5f5;
     line-height: 1.6;
     scroll-behavior: smooth;
   }

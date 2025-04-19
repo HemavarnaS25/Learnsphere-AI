@@ -15,7 +15,7 @@ const Home = () => (
           <Link to="/login?role=instructor" className="btn-primary">
             Instructor
           </Link>
-          {/* plain student login */}
+          
           <Link to="/login" className="btn-secondary">
             Login
           </Link>
